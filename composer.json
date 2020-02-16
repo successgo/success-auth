@@ -1,0 +1,22 @@
+{
+    "name": "successgo/success-auth",
+    "type": "library",
+    "description": "Make oauth login easy",
+    "keywords": ["OAuth", "auth"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Success Go",
+            "email": "SuccessGao@protonmail.ch"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SuccessGo\\SuccessAuth\\": "."
+        }
+    },
+    "minimum-stability": "dev"
+}
