@@ -4,7 +4,6 @@
 namespace SuccessGo\SuccessAuth\Request\AuthRequest;
 
 
-use EasyWeChat\MiniProgram\Encryptor;
 use SuccessGo\SuccessAuth\Enum\AuthResponseStatus;
 use SuccessGo\SuccessAuth\Exception\AuthException;
 use SuccessGo\SuccessAuth\Model\AuthCallback;
@@ -68,7 +67,7 @@ class WechatLiteAuthRequest extends AbstractAuthRequest
             throw AuthException::fromStatus(AuthResponseStatus::WECHAT_LITE_DECRYPT_FAIL);
         }
 
-        if (isset($data['unionid'])) {
+        if (isset($data['unionId'])) {
             $authToken->setUnionId($data['unionId']);
         }
 

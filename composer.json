@@ -12,6 +12,8 @@
     ],
     "require": {
         "php": "^7.2.5",
+        "ext-json": "*",
+        "ext-openssl": "*",
         "guzzlehttp/guzzle": "^6.0"
     },
     "autoload": {
