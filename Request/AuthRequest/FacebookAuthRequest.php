@@ -47,7 +47,7 @@ class FacebookAuthRequest extends AbstractAuthRequest
 
     private function getUserPicture($response)
     {
-        if ($response['picture'] && $response['picture']['data'] && $response['picture']['data']['url']) {
+        if (isset($response['picture'], $response['picture']['data'], $response['picture']['data']['url'])) {
             return $response['picture']['data']['url'];
         }
 
