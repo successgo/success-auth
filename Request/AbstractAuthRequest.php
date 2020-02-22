@@ -108,23 +108,23 @@ abstract class AbstractAuthRequest implements AuthRequestInterface
             ->build();
     }
 
-    protected function doPostAccessToken(string $code): string
+    protected function doPostAccessToken(string $code, array $options = []): string
     {
-        return HttpClient::post($this->accessTokenUrl($code));
+        return HttpClient::post($this->accessTokenUrl($code), $options);
     }
 
-    protected function doGetAccessToken(string $code): string
+    protected function doGetAccessToken(string $code, array $options = []): string
     {
-        return HttpClient::get($this->accessTokenUrl($code));
+        return HttpClient::get($this->accessTokenUrl($code), $options);
     }
 
-    protected function doPostUserInfo(AuthToken $authToken): string
+    protected function doPostUserInfo(AuthToken $authToken, array $options = []): string
     {
-        return HttpClient::post($this->userInfoUrl($authToken));
+        return HttpClient::post($this->userInfoUrl($authToken), $options);
     }
 
-    protected function doGetUserInfo(AuthToken $authToken): string
+    protected function doGetUserInfo(AuthToken $authToken, array $options = []): string
     {
-        return HttpClient::get($this->userInfoUrl($authToken));
+        return HttpClient::get($this->userInfoUrl($authToken), $options);
     }
 }

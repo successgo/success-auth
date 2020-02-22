@@ -8,20 +8,20 @@ use GuzzleHttp\Client;
 
 class HttpClient
 {
-    public static function get(string $url): string
+    public static function get(string $url, array $options = []): string
     {
         self::checkHttpClient();
         $client = new Client();
-        $response = $client->get($url);
+        $response = $client->get($url, $options);
         $stream = $response->getBody();
         return $stream->getContents();
     }
 
-    public static function post(string $url): string
+    public static function post(string $url, array $options = []): string
     {
         self::checkHttpClient();
         $client = new Client();
-        $response = $client->post($url);
+        $response = $client->post($url, $options);
         $stream = $response->getBody();
         return $stream->getContents();
     }
