@@ -46,9 +46,7 @@ abstract class AbstractAuthRequest implements AuthRequestInterface
     public function login(AuthCallback $authCallback): AuthResponse
     {
         try {
-            /** @var AuthToken $authToken */
             $authToken = $this->getAccessToken($authCallback);
-            /** @var AuthUser $authUser */
             $authUser = $this->getUserInfo($authToken);
 
             return AuthResponseBuilder::builder()
